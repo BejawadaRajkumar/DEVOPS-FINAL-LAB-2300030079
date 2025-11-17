@@ -3,8 +3,8 @@ services:
     image: mysql:8
     container_name: mysql-db
     environment:
-      MYSQL_ROOT_PASSWORD: docker
-      MYSQL_DATABASE: productdb
+      MYSQL_ROOT_PASSWORD: exam
+      MYSQL_DATABASE: coursedb
     ports:
       - "3307:3306"
     volumes:
@@ -13,8 +13,8 @@ services:
       - springboot-mysql-net
 
   backend:
-    image: bejawadarajkumar/2300030079-final-frontend:latest
-    container_name: springboot-prac
+    image: bejawadarajkumar/2300030079-final-backend:latest
+    container_name: springboot-exam
     ports:
       - "30032:2000"
     depends_on:
@@ -24,8 +24,8 @@ services:
       - springboot-mysql-net
 
   frontend:
-    image: bejawadarajkumar/2300030079-final-backend:latest
-    container_name: react-prac
+    image: bejawadarajkumar/2300030079-final-frontend:latest
+    container_name: react-exam
     ports:
       - "30031:80"
     depends_on:
